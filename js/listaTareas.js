@@ -6,7 +6,7 @@ para ese fin.
 
 */
 
-let tareas = ['comer', 'beber', 'cantar']
+let tareas = []
 
 
 function sumarTarea(){
@@ -27,13 +27,31 @@ function mostrarTarea(){
         let ul = document.createElement('ul');  
         document.getElementById('lugarLista').appendChild(ul);
         tareas.forEach(itemTareas);
-        function itemTareas(element, posicion) {
+        function itemTareas(element, posicion) {        
             let li = document.createElement('li');
             ul.appendChild(li);
             li.innerHTML=li.innerHTML + element +` es la tarea `+ posicion
         }
     };
 
+function abrirLista(){
+        let ul = document.createElement('ul');  
+        document.getElementById('lugarLista').appendChild(ul);
+        tareas.forEach(itemTareas);
+        function itemTareas(element, posicion) {        
+            let li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML=li.innerHTML + element +` es la tarea `+ posicion
+        }
+    };
+
+    function cerrarLista() {
+      let element = document.getElementById("lugarLista");
+                while (element.firstChild) {
+                element.removeChild(element.firstChild);
+        }
+    }
+    
     
 
 
